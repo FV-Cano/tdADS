@@ -1,17 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apuntes ADSI</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
+
 <body>
     <header class="header"> Header </header>
-    <div class="content-container"> 
-        <aside class="sidebar"> Sidebar </aside>
-        <main class="main-container"> container</main>
+    <div class="content-container">
+        <aside class="sidebar">
+            Contenido
+            <nav>
+                <ul>
+                    <li><a href="./definicionProcesos.html" class="content-loader">Definición de Procesos</a></li>
+                    <li><a href="./lenguajeEstructurado.html" class="content-loader">Lenguaje Estructurado</a></li>
+                    <ul>
+                        <li><a href="./aspectos.html"
+                            class="content-loader">Aspectos</a></li>
+                    </ul>
+                </ul>
+            </nav>
+        </aside>
+        <div class="main-container">
+            <main class="main-content" id="main-content"></main>
+        </div>
     </div>
     <footer class="footer"> Footer </footer>
+
+    <!-- Routing logic -->
+    <script src="../js/dom.js"></script>
 </body>
+
 </html>
