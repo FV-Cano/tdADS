@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/sintaxis.css">
+</head>
+
+<body>
+    <ul class="main-list">
+        <li>
+            <h2>Acción</h2>
+            <p>
+                Es lo que debe hacerse ante una circunstancia determinada. Es fundamental detectar que no encierre otras
+                en combinación con ella. ¿Cómo detectarlo? Buscando un solo verbo activo, cuidando de establecer que
+                clase de verbo activo se encontró: si es uno del tipo comparar, controlar, verificar, se está ante la
+                relación de varias acciones, resultado del funcionamiento decidido por ese verbo.
+            </p>
+            <p>La acción se indica por medio de UN verbo en infinitivo y un sustantivo, calificado o no.</p>
+            <ul class="ul-containerStx">
+                <li><strong>descuento</strong></li>
+                <li><strong>descuento del 10%</strong></li>
+            </ul>
+            <p>Otra manera es usando expresiones del tipo algebraico</p>
+            <p><strong>hacer descuento = importe x 10%</strong></p>
+            <p>
+                (Como primer miembro de la igualdad se coloca el resultado que se quiere obtener, como segundo miembro
+                el procedimiento para obtenerlo). Es fundamental estar seguro de que la expresión es <strong>de tipo
+                algebraico, puede ser otra cosa que use los mismos símbolos con distinto significado.</strong>
+            </p>
+            <p>
+                Ejemplo: la gente que programa usa expresiones del tipo: CUENTA = CUENTA + 1, su significado es
+                incrementar en una unidad el valor de cuenta, pero un lector que no esté familiarizado con esta
+                convención la va a interpretar como algo aritmético. Sus conclusiones serán: La expresión es absurda, 35
+                no es igual a 35 +1.
+            </p>
+        </li>
+        <li>
+            <h2>Condición</h2>
+            <p>
+                Define las características de una situación dada. Se plantea de tal forma que sólo pueda dar lugar a dos
+                situaciones excluyentes: que la condición se cumpla (VERDADERA) o que no lo haga (FALSA).
+            </p>
+            <ul class="ul-containerStx">
+                <li><strong>fecha contrato > fecha del día -3</strong></li>
+                <li><strong>20 toneladas < peso < 26 toneladas</strong>
+                </li>
+            </ul>
+            <p>
+                Pueden usarse solas o combinadas. La forma de combinarlas es a través de los operadores Y (que establece
+                que las condiciones en conjunto funcionan como una sola de orden superior) y O (que especifica que, de
+                ese grupo, se usará una sola cualquiera).
+            </p>
+            <ul class="ul-containerStx">
+                <li><strong>Sexo = varón Y nacionalidad = argentino</strong>(que significa varón argentino)</li>
+                <li><strong>Valor $5000 O descuento > 12</strong>(que significa o bien valor < $5000, o bien descuento>
+                        12%)</li>
+            </ul>
+            <p>
+                A menos que sea indispensable, no usar las combinaciones ya que es probable que resulten difíciles de
+                comprender por el lector. Nunca usar una combinación que abarque ambos operadores.
+            </p>
+        </li>
+        <li>
+            <h2>Toma de Decisión</h2>
+            <p>
+                Consiste en la selección de las acciones a desarrollar, en función de las condiciones que se dan en esa
+                situación. Las decisiones pueden ser programadas o no programadas, el Lenguaje Estructurado va ocuparse
+                solamente de mostrar las tomas de decisión que corresponden a Decisiones Programadas.
+            </p>
+            <ul>
+                <li>
+                    <strong>Selección de alternativas por efecto de la decisión tomada sobre un único estado de una condición</strong>
+                    <p>
+                        <strong>SI, SI NO, FIN SI</strong> son los operadores que especifican el camino a recorrer para la toma de decisión. El operador SI NO sólo se utiliza si por la negación de la condición debe hacerse algo. La forma de plantearla es:
+                    </p>
+                    <ul class="ul-decisionContainer">
+                        <li><strong>SI &lt;condición&gt;</strong> (se cumple)</li>
+                        <li class="tab1"><strong>HACER acción 1</strong></li>
+                        <li class="tab2"><strong>acción 2</strong></li>
+                        <li><strong>SI NO</strong> (condición no se cumple)</li>
+                        <li class="tab1"><strong>HACER acción 3</strong></li>
+                        <li><strong>FIN SI</strong></li>
+                        <li><strong>--------------------------------------</strong></li>
+                        <li><strong>SI &lt;condición&gt;</strong> (se cumple)</li>
+                        <li class="tab1"><strong>HACER acción 1</strong></li>
+                        <li class="tab2"><strong>acción 2</strong></li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Casos de selección de alternativas por toma de decisión sobre distintos estados (excluyentes) de una misma condición.
+                        <p></p>
+                        <ul class="ul-decisionContainer">
+                            <li>HACER CASOS</li>
+                            <li>CASO valor de condición = a</li>
+                            <li class="tab1">HACER acción 1</li>
+                            <li>CASO valor de condición = b</li>
+                            <li class="tab1">HACER acción 2</li>
+                            <li>CASO valor de condición = c</li>
+                            <li class="tab1">HACER acción 3</li>
+                            <li>OTROS CASOS (valor &lt;&gt; a,b,c)</li>
+                            <li class="tab1">HACER acción 4</li>
+                        </ul>
+                    </strong>
+                </li>
+                <li>
+                    <strong>Iteraciones de una situación dada, sobre una misma toma de decisión</strong>
+                    <p>Hay dos situaciones distintas a tener en cuenta:</p>
+                    <p><strong>Situación 1:</strong> Repetir algo mientras se mantenga el estado de una condición:</p>
+                    <ul class="ul-decisionContainer">
+                        <li><strong>MIENTRAS &lt;condicion&gt; </strong>(se mantenga)</li>
+                        <li class="tab1"><strong>HACER acción 1</strong></li>
+                        <li class="tab2"><strong>acción 2</strong></li>
+                        <li><strong>FIN MIENTRAS</strong></li>
+                    </ul>
+                    <p><strong>Situación 2:</strong> Repetir algo hasta que la condición llegue a un cierto estado:</p>
+                    <ul class="ul-decisionContainer">
+                        <li><strong>HASTA &lt;condicion&gt; </strong>(llegue al estado determinado)</li>
+                        <li class="tab1"><strong>HACER acción 1</strong></li>
+                        <li><strong>FIN HASTA</strong></li>
+                    </ul>
+                    <p>
+                        En la primera situación el proceso arranca y se mantiene por un estado de la condición conocido de antemano, el ciclo se seguirá repitiendo durante todo el tiempo en que ese estado no cambie. En la segunda situación el proceso arranca porque llegó el momento de hacerlo y se mantiene para cualquier estado (menos uno) que toma la condición, ese estado, conocido de antemano, es el que se fijó para hacer terminar el ciclo de iteraciones.
+                    </p>
+                    <p>
+                        La diferencia entre ambas situaciones es que el MIENTRAS hace funcionar el ciclo y el HASTA se usa para detenerlo. Ambas situaciones pueden darse interrelacionadas:
+                    </p>
+                    <ul class="ul-decisionContainer">
+                        <li><strong>HASTA condicion = a</strong></li>
+                        <li class="tab1"><strong>HACER acción 1</strong></li>
+                        <li class="tab1"><strong>MIENTRAS condición = b</strong></li>
+                        <li class="tab2"><strong>HACER acción 2</strong></li>
+                        <li class="tab1"><strong>FIN MIENTRAS</strong></li>
+                        <li><strong>FIN HASTA</strong></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    </ul>
+</body>
+
+</html>

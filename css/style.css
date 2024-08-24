@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url(./header.css);
 
 :root {
     --background-color: #0d1117;
@@ -17,27 +18,19 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .content-container {
     display: flex;
     gap: 10px;
-    flex: 1;
     height: 80%;
 }
 
 .sidebar {
     min-width: 15%;
     width: 15%;
-    height: 100%;
     border-right: 1px solid #000;
-}
-
-.header {
-    width: 100%;
-    height: 10%;
-    min-height: 10%;
-    border-bottom: 1px solid #000;
 }
 
 .footer {
@@ -57,53 +50,19 @@ body {
     line-height: 1.5;
     scrollbar-width: thin;
     scrollbar-color: #888 #f1f1f1;
-    }
-    .scroll-container::-webkit-scrollbar {
-        width: 12px; /* For WebKit browsers */
-        height: 12px; /* For WebKit browsers */
-    }
-    .scroll-container::-webkit-scrollbar-thumb {
-        background: #888;
-        border-radius: 6px;
-    }
-    .scroll-container::-webkit-scrollbar-track {
-        background: #f1f1f1;
-        border-radius: 6px;
-    }
-    .scroll-container::-webkit-scrollbar-thumb:hover {
-        background: #555;
-    }
-
-
-/* .main-container {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(7, 1fr);
 }
-
-.header {
-    grid-column: span 6 / span 6;
-    border-bottom: 1px solid #000;
+.scroll-container::-webkit-scrollbar {
+    width: 12px; /* For WebKit browsers */
+    height: 12px; /* For WebKit browsers */
 }
-
-.sidebar {
-    grid-row: span 5 / span 5;
-    grid-row-start: 2;
-    border-right: 1px solid #000;
+.scroll-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 6px;
 }
-
-.footer {
-    grid-column: span 6 / span 6;
-    grid-column-start: 1;
-    grid-row-start: 7;
-    border-top: 1px solid #000;
+.scroll-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 6px;
 }
-
-.main-container {
-    grid-column: span 5 / span 5;
-    grid-row: span 5 / span 5;
-    grid-column-start: 2;
-    grid-row-start: 2;
-} */
+.scroll-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

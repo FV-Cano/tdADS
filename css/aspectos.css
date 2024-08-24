@@ -1,0 +1,11 @@
+.ex-container {
+    display: flex;
+    justify-content: center;
+    gap: 10rem;
+    margin-bottom: 30px;
+}
+
+.li-example {
+    list-style: none;
+    padding: 0;
+}

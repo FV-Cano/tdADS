@@ -1,0 +1,21 @@
+.ul-containerStx {
+    list-style: none;
+    padding: 0;
+}
+
+.main-list {
+    list-style: none;
+    padding: 0;
+}
+
+.ul-decisionContainer {
+    list-style: none;
+    
+    margin-bottom: 20px;
+    .tab1 {
+        margin-left: 20px;
+    }
+    .tab2 {
+        margin-left: 40px;
+    }
+}

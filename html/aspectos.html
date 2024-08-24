@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/aspectos.css">
 </head>
 
 <body>
@@ -53,22 +54,143 @@
     </p>
     <ol>
         <li><strong>Secuencia de Acciones</strong>
-            <p>Es el caso en el que el proceso consta de una serie de acciones elementales que deben cumplirse una atrás de la
+            <p>Es el caso en el que el proceso consta de una serie de acciones elementales que deben cumplirse una atrás
+                de la
                 otra.</p>
-                <p>La forma de indicarlo es describir cada una de ellas (con el nivel de detalle que se necesite), en el orden lógico en que deban cumplirse.</p>
-                <p>Dado que estás acciones se deben cumplir sin condicionamientos de ningún tipo y en la inamovible secuencia en que aparecen, puede considerarse a toda la secuencia como una sola acción de orden superior. En ese caso la especificación será la de una acción solitaria, su contenido no podrá mostrar el detalle de lo que hay que realizar (secuencia original), se coloca como “detalle” un nombre y bajo ese nombre, en algún otro momento y lugar se muestra la secuencia original.</p>
-                <p>Por ejemplo: </p>
-                <p>Detallar proceso de pintar una puerta de madera:</p>
-                <div class="ex-container">
+            <p>La forma de indicarlo es describir cada una de ellas (con el nivel de detalle que se necesite), en el
+                orden lógico en que deban cumplirse.</p>
+            <p>Dado que estás acciones se deben cumplir sin condicionamientos de ningún tipo y en la inamovible
+                secuencia en que aparecen, puede considerarse a toda la secuencia como una sola acción de orden
+                superior. En ese caso la especificación será la de una acción solitaria, su contenido no podrá mostrar
+                el detalle de lo que hay que realizar (secuencia original), se coloca como “detalle” un nombre y bajo
+                ese nombre, en algún otro momento y lugar se muestra la secuencia original.</p>
+            <p>Por ejemplo: </p>
+            <p>Detallar proceso de pintar una puerta de madera:</p>
+            <div class="ex-container">
+                <div class="container">
                     <p class="ex-title"><i>Opción 1</i></p>
-                    <p class="ex-body">desmontar puerta
-                        ponerla sobre caballetes
-                        remover la pintura vieja 
-                        lijar la superficie
-                        aplicar base para madera
-                        aplicar 2 manos de pintura
-                        </p>
+                    <ul class="li-example">
+                        <li class="ex-body">desmontar puerta</li>
+                        <li class="ex-body">ponerla sobre caballetes</li>
+                        <li class="ex-body">remover la pintura vieja </li>
+                        <li class="ex-body">lijar la superficie</li>
+                        <li class="ex-body">aplicar base para madera</li>
+                        <li class="ex-body">aplicar 2 manos de pintura</li>
+                    </ul>
                 </div>
+                <div class="container">
+                    <p class="ex-title"><i>Opción 2</i></p>
+                    <ul class="li-example">
+                        <li class="ex-body">Hacer PINTURA PUERTA</li>
+                        <li class="ex-body">y en algún otro lugar</li>
+                        <li class="ex-body">desmontar puerta</li>
+                        <li class="ex-body">ponerla sobre caballetes</li>
+                        <li class="ex-body">remover la pintura vieja </li>
+                        <li class="ex-body">lijar la superficie</li>
+                        <li class="ex-body">aplicar base para madera</li>
+                        <li class="ex-body">aplicar 2 manos de pintura</li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+        <li><strong>Selección de alternativas por efecto de la decisión tomada sobre un único estado de una
+                condición</strong>
+            <p>
+                En alguna parte del desarrollo del proceso puede ser que se haga necesario seleccionar entre dos caminos
+                posibles. Ello obliga a una toma de decisión, entonces de la secuencia de pasos del proceso se
+                seleccionarán cuales deben cumplirse y cuales no, nunca se cumplirán todos los pasos de la secuencia a
+                la vez. Siempre se cumplirá una alternativa (la que se debe a la condición en estado VERDADERO) o la
+                otra (la que corresponde al estado FALSO).
+            </p>
+            <p>Por ejemplo:</p>
+            <p>
+                Tal vez un modo más completo de detallar el proceso de pintar una puerta de madera ya nombrado podría
+                ser:
+            </p>
+            <div class="ex-container">
+                <div class="container">
+                    <ul class="li-example">
+                        <li class="ex-body">desmontar puerta</li>
+                        <li class="ex-body">ponerla sobre caballetes</li>
+                        <li class="ex-body">verificar si la pintura vieja está en mal estado:</li>
+                        <ul>
+                            <li class="ex-body">si lo está, removerla;</li>
+                            <li class="ex-body">si no lo está, rasquetear la superficie</li>
+                        </ul>
+                        <li class="ex-body">lijar la superficie</li>
+                        <li class="ex-body">verificar si la pintura vieja fue removida:</li>
+                        <ul>
+                            <li class="ex-body">si lo fue, aplicar base para madera</li>
+                            <li class="ex-body">si no lo fue, dejarla como está</li>
+                        </ul>
+                        <li class="ex-body">aplicar 2 manos de pintura</li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+        <li><strong>Casos de selección de alternativas por tomas de decisión sobre distintos estados (excluyentes) de
+                una misma condición</strong>
+            <p>
+                A veces según los distintos estados que toma una condición, se pueden producir distintas situaciones. Si
+                la condición toma un valor debe realizarse una acción, si no es así y toma otro valor entonces debe
+                realizarse otra acción.
+            </p>
+            <p>En el ejemplo de la puerta podría ser:</p>
+            <div class="ex-container">
+                <div class="container">
+                    <ul class="li-example">
+                        <li class="ex-body">desmontar puerta</li>
+                        <li class="ex-body">ponerla sobre caballetes</li>
+                        <li class="ex-body">lijar la superficie</li>
+                        <ul>
+                            <li class="ex-body">si se va a pintar con un color similar al viejo, dar 2 manos de pintura;
+                            </li>
+                            <li class="ex-body">en cambio, si se va a pintar con un color más claro, hacer una lijada
+                                extra y dar 2 manos de pintura;</li>
+                            <li class="ex-body">si no fuera así, si se va a usar un color más oscuro, aplicar 1 sola
+                                mano de pintura;</li>
+                            <li class="ex-body">si se desea barnizar, hacer una lijada extra, aplicar la base adecuada y
+                                dar 2 manos de barniz</li>
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+        </li>
+        <li><strong>Iteraciones de una situación dada, en base a una condición externa</strong>
+            <p>
+                A veces un paso o grupo de pasos debe repetirse mientras se mantenga vigente una condición externa a él
+                o ellos.
+            </p>
+            <p>Se dan dos casos:</p>
+            <p>
+                - En el primero, <strong>la acción debe repetirse tantas veces como haga falta (la cantidad no tiene un
+                    límite propio), condicionada por el hecho de que una determinada situación externa se mantenga en un
+                    estado específico.</strong> El ciclo de repeticiones sólo se interrumpirá cuando esa situación
+                externa cambie de estado por sus propios motivos también externos.
+            </p>
+            <p>
+                - En el segundo caso,<strong> la acción debe repetirse tantas veces como haga falta, aún cuando la
+                    condición externa vaya cambiando de estados, hasta que tome uno particular, para frenar el ciclo (el
+                    esperado por esta acción repetitiva).
+                </strong>
+            </p>
+            <p>Podría ser en el caso de pintar la puerta:</p>
+            <div class="ex-container">
+                <div class="container">
+                    <ul class="li-example">
+                        <li class="ex-body">desmontar puerta</li>
+                        <li class="ex-body">ponerla sobre caballetes</li>
+                        <li class="ex-body">remover la pintura vieja:</li>
+                        <ul>
+                            <li class="ex-body">hacerlo mientras la superficie no quede totalmente limpia (o hasta que
+                                desaparezca totalmente la pintura)</li>
+                        </ul>
+                        <li class="ex-body">lijar la superficie</li>
+                        <li class="ex-body">aplicar base para madera</li>
+                        <li class="ex-body">aplicar 2 manos de pintura</li>
+                    </ul>
+                </div>
+            </div>
         </li>
     </ol>
 </body>
