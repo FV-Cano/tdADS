@@ -24,7 +24,7 @@ body {
 .content-container {
     display: flex;
     gap: 10px;
-    height: 80%;
+    height: 85%;
 }
 
 .sidebar {
