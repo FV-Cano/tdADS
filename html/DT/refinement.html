@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/dt.css">
+</head>
+<body>
+    <h2>Algunas consideraciones para tener en cuenta</h2>
+    <p>
+        Cuando la tabla tiene todas sus condiciones booleanas se denomina <strong>TABLA BOOLEANA</strong>, si existe al menos una condición de registro extendido la tabla será una <strong>TABLA DE REGISTRO EXTENDIDO</strong> (nuestro ejemplo se trata de una tabla de registro extendido)
+    </p>
+    <p>
+        <strong>IMPORTANTE:</strong> No siempre se incluyen en la tabla todas las reglas existentes producto de la combinación de todos los valores de las condiciones, sólo se incluyen las combinaciones que están contempladas en el enunciado. Para el caso de una tabla booleana el número máximo de reglas que tendremos es 2n, donde n es la cantidad de condiciones que tenemos.
+    </p>
+    <p>
+        Al terminar la tabla debemos revisar que no existan REGLAS IDENTICAS, REGLAS CONTRADICTORIAS y REGLAS REDUNDANTES. A continuación, explicaremos cada una y la forma de proceder para cada caso.
+    </p>
+    <p>
+        <strong><span class="importante">REGLAS IDENTICAS:</span> Dos reglas son idénticas cuando tienen exactamente los mismos valores de condiciones y las mismas acciones.</strong>
+    </p>
+    <p>
+        Ejemplo:
+    </p>
+    <div class="img-containerTD">
+        <img src="../../assets/images/TD/table/refinement/refinement_eq_1.png" alt="REF_EQ1">
+    </div>
+    <p>
+        Vemos en la tabla las reglas 3 y 5 son idénticas, la forma de proceder es eliminar una de las dos.
+    </p>
+    <div class="img-containerTD">
+        <img src="../../assets/images/TD/table/refinement/refinement_eq_2.png" alt="REF_EQ2">
+    </div>
+    <p>
+        <strong><span class="importante">REGLAS CONTRADICTORIAS:</span> Dos reglas son contradictorias cuando tienen exactamente los mismos valores de condiciones y al menos una acción es diferente.</strong>
+    </p>
+    <div class="img-containerTD">
+        <img src="../../assets/images/TD/table/refinement/refinement_op.png" alt="REF_OP">
+    </div>
+    <p>
+        Como se puede observar las reglas 3 y 5 tienen las mismas condiciones (>18 y M) pero en el primer caso se rechaza al candidato, mientras que en el otro se acepta. ¿Cuál es la regla correcta? ¿Quién puede darnos esta información? Nosotros como analistas no podemos decidir cuál es la regla correcta, esa información debemos solicitársela a nuestro cliente y recién ahí podremos eliminar la regla que es incorrecta.  
+    </p>
+    <p>
+        <strong><span class="importante">REGLAS REDUNDANTES:</span> Dos reglas son redundantes cuando tienen las mismas acciones y las mismas condiciones excepto una.</strong>
+    </p>
+    <p>
+        Ejemplo:
+    </p>
+    <div class="img-containerTD">
+        <img src="../../assets/images/TD/table/refinement/refinement_red_1.png" alt="REF_RED1">
+    </div>
+    <p>
+        Como vemos en este caso las reglas 2 y 3 tienen la misma acción y las mismas condiciones (Sexo: F) excepto una (edad). Para solucionar esto debemos juntar las reglas en una, donde el valor que difiere puede asumir ambos valores, esto se indica con una “/”, la “/” significa un o excluyente, el valor de esta condición es uno u otro.
+    </p>
+    <div class="img-containerTD">
+        <img src="../../assets/images/TD/table/refinement/refinement_red_2.png" alt="REF_RED2">
+    </div>
+    <p>
+        O lo que sería lo mismo para este caso:
+    </p>
+    <div class="img-containerTD">
+        <img src="../../assets/images/TD/table/refinement/refinement_red_3.png" alt="REF_RED3">
+    </div>
+    <p>
+        Otro ejemplo:
+    </p>
+    <div class="img-containerTD">
+        <img src="../../assets/images/TD/table/refinement/refinement_red_4.png" alt="REF_RED4">
+    </div>
+    <p>
+        Vemos que las reglas 1 y 3 son Redundantes, las juntamos:
+    </p>
+    <div class="img-containerTD">
+        <img src="../../assets/images/TD/table/refinement/refinement_red_5.png" alt="REF_RED5">
+    </div>
+    <p>
+        Si la condición "vive en" tuviese únicamente esos dos valores (CABA y OTRO), entonces diríamos que puede asumir cualquier valor, en ese caso no me interesa analizarlo y le colocamos -.
+    </p>
+    <div class="img-containerTD">
+        <img src="../../assets/images/TD/table/refinement/refinement_red_6.png" alt="REF_RED6">
+    </div>
+    
+    
+</body>
+</html>

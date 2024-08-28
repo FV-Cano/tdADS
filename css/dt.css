@@ -1,0 +1,15 @@
+.img-containerTD {
+    display: flex;
+    justify-content: center;
+    img {
+        border-radius: 10px;
+    }
+}
+
+.main-title {
+    text-align: center;
+}
+
+.important {
+    color: var(--important-text);
+}

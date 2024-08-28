@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/dt.css">
+</head>
+<body>
+    <h1><u>Estructura de una Tabla de Decisión</u></h1>
+    <p>La Tabla de Decisión es una matriz que posee los siguientes elementos</p>
+    <div class="img-containerTD">
+        <img src="../../assets/images/TD/td-elementos.png" alt="Elementos de una Tabla de Decisión">
+    </div>
+    <p>
+        <strong>CONDICIONES: </strong>Son los posibles estados de una entidad (Personas, etc). Definen cada una de las variables que intervienen en el problema, es decir las distintas situaciones que pueden presentarse en el problema que estamos analizando.
+    </p>
+    <p>
+        Por ejemplo: Si tuviésemos una empresa que realiza entregas a domicilio en CABA, Gran BS AS y Córdoba las condiciones a evaluar serían:
+    </p>
+    <ul>
+        <li>Lugar de Entrega CABA: SI/NO</li>
+        <li>Lugar de Entrega Gran Bs As: SI/NO</li>
+        <li>Lugar de Entrega Córdoba: SI/NO</li>
+    </ul>
+    <p>Otra forma de escribir estas condiciones podría ser:</p>
+    <ul>
+        <li>Lugar de Entrega: CABA/Gran Bs As/Córdoba</li>
+    </ul>
+    <p>
+        En el primer caso los únicos valores que asumen las condiciones son SI o NO, en este caso las condiciones se llaman <span class="important">BOOLEANAS</span>. En el segundo ejemplo la condición puede asumir cualquiera de los tres valores, en este caso la condición se denomina <span class="important">REGISTRO EXTENDIDO</span>.
+    </p>
+    <p>
+        <strong>ACCIONES: </strong>Es el conjunto de acciones que deben realizarse cuando se presentan ciertas condiciones. Se expresan con verbos en infinitivo que definen la o las acciones a realizar.
+    </p>
+    <p>
+        Por ejemplo: Volviendo al ejemplo anterior si las entregas en CABA son sin cargo, en Gran Bs As $300 y en Córdoba $500. Tendríamos las siguientes acciones:
+    </p>
+    <ul>
+        <li>No cobrar envío</li>
+        <li>Cobrar $300 de envío</li>
+        <li>Cobrar $500 de envío</li>
+    </ul>
+    <p>
+        Otra forma de escribir las acciones podría ser como registro extendido, pero tengo que estar seguro de que son acciones <i>excluyentes</i>. ¿Qué significa eso? Que si cobro $300 por ejemplo, no voy a cobrar $500 o enviar la mercadería sin cargo.
+    </p>
+    <ul>
+        <li>Cobrar 0$/300$/500$</li>
+    </ul>
+    <p>
+        <strong>REGLAS: </strong>Son la combinación entre condiciones y acciones. Muestran las acciones específicas del conjunto que deben realizarse dados los valores que toman las decisiones. En la tabla están representadas por las distintas columnas, deben numerarse en forma correlativa. <span class="important"><strong> Importante:</strong> toda regla debe tener al menos 1 acción.</span>
+    </p>
+    <p>
+        En el ejemplo anterior tendremos 3 reglas, una para cada valor de lugar de entrega y en cada una se indicará cual es el importe a cobrar.
+    </p>
+</body>
+</html>

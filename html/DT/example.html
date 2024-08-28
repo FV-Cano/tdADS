@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/dt.css">
+</head>
+
+<body>
+    <h2><u>Veamos con un ejemplo como se va completando la tabla:</u></h2>
+    <p>
+        Cuando un cliente hace una compra por el sitio web de la empresa debe indicar el domicilio de entrega de la
+        mercadería. Si el lugar de entrega es Capital Federal se bonificará el mismo. Si el lugar de entrega es Gran Bs
+        As y la compra supera los $3500 también se bonificará el envío, pero si no lo supera deberá pagar $200 de envío.
+        Si el envío se hará a la provincia de Córdoba entonces el cliente deberá pagar $500. La empresa no realiza
+        envíos a ninguna otra parte, con lo cual si el envío fuese a otro lado deberá rechazarse la venta.
+    </p>
+    <ol>
+        <li>
+            <p>
+                Vamos a confeccionar el listado de Condiciones y Acciones que nos servirá de referencia para luego armar
+                la tabla.
+            </p>
+
+            <div class="img-containerTD">
+                <img src="../../assets/images/TD/list_cdac.png" alt="cdac">
+            </div>
+        </li>
+        <li>
+            <p>Colocamos en la tabla las condiciones y acciones.</p>
+
+            <div class="img-containerTD">
+                <img src="../../assets/images/TD/table_cdac.png" alt="T_cdac">
+            </div>
+            <p>
+                <span class="important">
+                    <strong>Importante:</strong> Deben separarse visualmente en la tabla las Condiciones de las
+                    Acciones, en este caso lo indicamos con una línea más gruesa.
+                </span>
+            </p>
+            <p>
+                Ahora comenzamos a analizar los que deberemos poner en las reglas, recordemos que las reglas deben
+                numerarse.
+            </p>
+            <p>
+                <span class="important">
+                    <strong>Primera regla: </strong>
+                </span>
+                Consideramos todos los clientes cuyo lugar de entrega es Capital, Federal, no me interesa saber el monto
+                de la compra porque siempre que sea este lugar la acción que debo realizar es "No cobrar envío".
+            </p>
+            <div class="img-containerTD">
+                <img src="../../assets/images/TD/table/structure/table_v1.png" alt="T_V1">
+            </div>
+            <p>
+                Vamos a analizar algunos símbolos que aparecen, en la condición “monto de la compra…” aparece un guión,
+                esto significa que no me interesa el valor que asuma esa condición (o lo que es lo mismo que para
+                cualquier valor de condición hago esas acciones). Entonces las condiciones pueden asumir alguno de los
+                valores indicados en las referencias o un guión que marca indiferencia para esa condición. <strong>
+                    SIEMPRE LAS CONDICIONES DEBEN TENER UN VALOR o UN GUION NO PUEDEN QUEDAR EN BLANCO.</strong>
+            </p>
+            <p>
+                La acción “No cobrar envío” se marca con una X, a diferencia de las condiciones que indicamos Si o No
+                para analizar si se cumplen o no las acciones se marcan con X para indicar que se realizan o se dejan en
+                blanco para indicar que no se realizan. Entonces las acciones pueden asumir un valor si son de registro
+                extendido, una X o estar en blanco. <strong>LAS ACCIONES PUEDEN QUEDAR VACIAS SI NO SE
+                    EJECUTAN.</strong> De hecho, sugerimos que en la parte de las acciones no se usen guiones para
+                indicar que no se realiza la acción a fin de facilitar la lectura de la tabla.
+            </p>
+            <p>
+                <span class="important">
+                    <strong>Segunda regla: </strong>
+                </span>
+                Consideramos todos los clientes cuyo lugar de entrega es Gran Bs As y el monto de compra supera los
+                $3500, en este caso tampoco debo cobrar el envío.
+            </p>
+            <div class="img-containerTD">
+                <img src="../../assets/images/TD/table/structure/table_v2.png" alt="T_V2">
+            </div>
+            <p>
+                <span class="important">
+                    <strong>Tercera regla: </strong>
+                </span>
+                Consideramos todos los clientes cuyo lugar de entrega es Gran Bs As y el monto de compra no supera los
+                $3500, en este caso debo cobrar $200 de envío.
+            </p>
+            <div class="img-containerTD">
+                <img src="../../assets/images/TD/table/structure/table_v3.png" alt="T_V3">
+            </div>
+            <p>
+                <span class="important">
+                    <Strong>Cuarta regla: </Strong>
+                </span>
+                Consideramos todos los clientes cuyo lugar de entrega es Córdoba, no me interesa saber el monto de la
+                compra porque siempre que sea este lugar la acción que debo realizar es cobrar $500.
+            </p>
+            <div class="img-containerTD">
+                <img src="../../assets/images/TD/table/structure/table_v4.png" alt="T_V4">
+            </div>
+            <p>
+                Acá nuevamente coloco el guión en la condición “Monto..” porque siempre cobro $500
+            </p>
+            <p>
+                <span class="important">
+                    <strong>Quinta regla: </strong>
+                </span>
+                Consideramos todos los clientes cuyo lugar de entrega no es ni Capital Federal ni Gran Bs. As ni
+                Córdoba, en cuyo caso tendré que rechazar la venta.
+            </p>
+            <div class="img-containerTD">
+                <img src="../../assets/images/TD/table/structure/table_v5.png" alt="T_V5">
+            </div>
+            <p>
+                Acá de nuevo no me interesa analizar la condición “Monto..” porque si el lugar no es Capital Federal,
+                Gran Bs. As o Córdoba independientemente del monto de la compra rechazo la venta.
+            </p>
+            <p>
+                Una vez que finalizamos la tabla con todas las reglas que me indica el enunciado voy a colocar,
+                <strong>sólo si hiciese falta,</strong> una última regla para tener una vía de escape si se presenta
+                cualquier otra situación no contemplada en el relevamiento que deberé ir a consultar, esto no significa
+                que van a ser decisiones no programadas, recuerden que la tabla no sirve para esas decisiones, es
+                solamente para analizar situaciones no contempladas y que de aparecer frecuentemente tal vez deban
+                incorporarse a la tabla. <strong>Si la tabla está completa, es decir no existe ninguna otra combinación
+                    para una nueva regla, entonces esta última regla otras no hace falta.</strong>
+            </p>
+            <div class="img-containerTD">
+                <img src="../../assets/images/TD/table/structure/table_v6.png" alt="T_V6">
+            </div>
+            <p>
+                <strong>
+                    La acción CONSULTAR no tiene que ponerse en la lista de acciones ya que es solo para indicar que
+                    tendré que ir a preguntar que sucede en ese caso no contemplado que apareció.
+                </strong>
+            </p>
+        </li>
+    </ol>
+</body>
+
+</html>

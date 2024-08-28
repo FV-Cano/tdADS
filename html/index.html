@@ -4,36 +4,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apuntes ADSI</title>
+    <title>Tablas de Decisión</title>
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
     <header class="header">
         <div class="logo-container"><img src="../assets/images/logo-utn.png" alt="Header Logo"></div>
+        <h2>Análisis de Sistemas de Información</h2>
     </header>
     <div class="content-container">
-        <aside class="sidebar">
-            Contenido
-            <nav>
-                <ul>
-                    <li><a href="./definicionProcesos.html" class="content-loader">Definición de Procesos</a></li>
-                    <li><a href="./lenguajeEstructurado.html" class="content-loader">Lenguaje Estructurado</a></li>
-                    <ul>
-                        <li><a href="./aspectos.html" class="content-loader">Aspectos</a></li>
-                        <li><a href="./sintaxis.html" class="content-loader">Sintaxis: Reglas prácticas</a></li>
-                    </ul>
-                </ul>
-            </nav>
-        </aside>
-        <div class="main-container">
+        <div class="wrapper" id="wrapper">
+            <div class="btn-container">
+                <button class="burger-menu" id="burger-menu">
+                    ☰
+                </button>
+            </div>
+            <aside class="sidebar" id="sidebar">
+                <nav>
+                    <div class="sidebar-content">
+                        <ul>
+                            <li><a href="./definicionProcesos.html" class="content-loader" id="nav-item">Definición de
+                                    Procesos</a></li>
+                            <li><a href="./lenguajeEstructurado.html" class="content-loader" id="nav-item">Lenguaje
+                                    Estructurado</a></li>
+                            <ul>
+                                <li class="tab1"><a href="./aspectos.html" class="content-loader"
+                                        id="nav-item">Aspectos</a></li>
+                                <li class="tab1"><a href="./sintaxis.html" class="content-loader"
+                                        id="nav-item">Sintaxis: Reglas prácticas</a></li>
+                            </ul>
+                            <li><a href="./DT/dt.html" class="content-loader" id="nav-item">Tablas de Decisión</a></li>
+                            <ul>
+                                <li class="tab1"><a href="./DT/structure.html" class="content-loader"
+                                        id="nav-item">Estructura</a></li>
+                                <li class="tab1"><a href="./DT/howTo.html" class="content-loader" id="nav-item">Cómo
+                                        realizar</a></li>
+                                <li class="tab1"><a href="./DT/example.html" class="content-loader"
+                                        id="nav-item">Ejemplo</a></li>
+                                <li class="tab1"><a href="./DT/refinement.html" class="content-loader"
+                                        id="nav-item">Consideraciones</a></li>
+                            </ul>
+                        </ul>
+                    </div>
+                </nav>
+            </aside>
+        </div>
+        <div class="main-container" id="main-container">
             <main class="main-content" id="main-content"></main>
         </div>
     </div>
-    <footer class="footer"> Footer </footer>
+    <footer class="footer">
+        <div class="license-container">
+            <div class="image-container">
+                <img src="../assets/images/CCAS badge.png" alt="CC BY-SA 4.0">
+            </div>
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/">Attribution-Sharelike 4.0 International</a>
+        </div>
+        <div class="author-container">
+            <ul>
+                <li>Ing. Ramiro Garbarini</li>
+                <li>Ing. Adriana Martínez</li>
+                <li>
+                    <div class="author-wrapper">
+                        <p>Federico Vicente Cano</p>
+                        <a href="https://www.linkedin.com/in/cano-federico/" class="icon-container">
+                            <img src="../assets/icons/linkedin-3-16.ico" alt="LinkedIn">
+                        </a>
+                        <a href="https://github.com/FV-Cano" class="icon-container">
+                            <img src="../assets/icons/github-10-16.ico" alt="Github">
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div> 
+    </footer>
 
     <!-- Routing logic -->
     <script src="../js/dom.js"></script>
+    <!-- Sidebar -->
+    <script src="../js/auxLogic.js"></script>
 </body>
 
 </html>

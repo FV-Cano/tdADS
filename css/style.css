@@ -1,10 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url(./header.css);
+@import url(./sidebar.css);
+@import url(./footer.css);
 
 :root {
     --background-color: #0d1117;
     --container-color: #161b22;
     --text-color: rgb(230, 237, 243);
+    --important-text: #4493f8;
     --font: 'Montserrat', sans-serif;
     
     font-family: var(--font);
@@ -16,40 +19,46 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    box-sizing: border-box;
 }
 
 .content-container {
     display: flex;
     gap: 10px;
-    height: 85%;
-}
+    height: 82%;
 
-.sidebar {
-    min-width: 15%;
-    width: 15%;
-    border-right: 1px solid #000;
-}
+    .wrapper {
+        gap: 10px;
+        max-width: 235px;
+        width: 100%;
+        transition: width 0.3s ease;
 
-.footer {
-    width: 100%;
-    height: 5%;
-    min-height: 5%;
-    border-top: 1px solid #000;
+        &.sidebar-hidden {
+            width: 0;
+            transition: width 0.3s ease;
+        }
+    }
 }
 
 .main-container {
-    margin: 35px 25px;
+    display: none;
+    margin: 35px 35px;
     padding: 15px;
     border-radius: 5px;
     background-color: var(--container-color);
-    width: fit-content;
+    width: 100%;
     overflow: auto;
     line-height: 1.5;
     scrollbar-width: thin;
     scrollbar-color: #888 #f1f1f1;
+
+    &.show {
+        display: block;
+    }
 }
 .scroll-container::-webkit-scrollbar {
     width: 12px; /* For WebKit browsers */
@@ -65,4 +74,9 @@ body {
 }
 .scroll-container::-webkit-scrollbar-thumb:hover {
     background: #555;
+}
+
+.btn-container {
+    display: flex;
+    padding: 10px;
 }
